@@ -1,0 +1,18 @@
+<fieldset>
+  <legend>Authentication</legend>
+  <form #f="ngForm" >
+
+    <input type="text" placeholder="Login" name="login" required #login ="ngModel" [ngModel]="model.login"><br>
+
+    <div class="hint" *ngIf="!login.valid && (login.touched||login.dirty)">Login is required</div>
+
+    <input type="password" placeholder="Password" name="password" required #pass ="ngModel" [ngModel]="model.password"><br>
+
+    <div class="hint" *ngIf="!pass.valid && (pass.touched||pass.dirty)">Password is required</div>
+
+    <button  [disabled]="!f.valid" (click)="doLogin(f.value)">Login</button>
+
+    <div *ngIf="loginError" class="hint">Wrong credentials</div>
+
+  </form>
+</fieldset>

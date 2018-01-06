@@ -1,0 +1,21 @@
+fieldset{
+  width: 50%;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  margin: auto;
+}
+
+input{
+  width: 100%;
+  position: relative;
+}
+
+h5{
+  text-align: center;
+}
+
+.hint{
+  background-color: darkred;
+  color:white;
+}

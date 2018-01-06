@@ -1,0 +1,24 @@
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Delete</th>
+    <th>Détails</th>
+  </tr>
+
+  <tr *ngFor="let c of courses">
+    <td>{{c.title}}</td>
+    <td>{{c.content}}</td>
+    <td><button (click)="delete(c.id)">Delete</button></td>
+    <td><button (click)="details(c)">Show in parent</button></td>
+  </tr>
+</table>
+
+
+<br><br><br>
+<form #f="ngForm">
+  <input type="number" name="id" required ngModel placeholder="ID"><br>
+  <input type="text" name="title" required ngModel placeholder="title"><br>
+  <input type="text" name="content" required ngModel placeholder="content"><br>
+  <button (click)="add(f.value)" [disabled]="!f.valid">Add</button>
+</form>
